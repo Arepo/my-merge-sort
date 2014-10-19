@@ -22,27 +22,11 @@ describe 'merge sort' do
 
 	describe 'merge' do
 
-		it 'given an empty array and a single-element array appends the element to self' do
-			expect([1].merge([], [2])).to eq [1, 2]
+		it 'given two single-element arrays returns a single array with the two elements sorted' do
+			expect(merge([2], [1])).to eq [1, 2]
 		end
 
-		it 'given [2] and [3] appends first 2 then 3 to self' do
-			arr1 = [1]
-			arr2 = [2]
-			arr3 = [3]
-			expect(arr1).to receive(:push).with(2).ordered
-			expect(arr1).to receive(:push).with(3).ordered
-			arr1.merge(arr2, arr3)
-		end
 
-		it 'given [3] and [2] appends first 2 then 3 to self' do
-			arr1 = [1]
-			arr2 = [2]
-			arr3 = [3]
-			expect(arr1).to receive(:push).with(2).ordered
-			expect(arr1).to receive(:push).with(3).ordered
-			arr1.merge(arr3, arr2)
-		end
 
 	end
 

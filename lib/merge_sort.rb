@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Array
 
 	def merge_sort
@@ -5,22 +7,29 @@ class Array
 
 	end
 
-	def merge(arr1, arr2)
-		first_of_first = arr1.first
-		first_of_second = arr2.first
-		if !first_of_first
-			self.push first_of_second
-		elsif !first_of_second
-			self.push first_of_first
-		elsif first_of_first < first_of_second
-			self.push first_of_first
-			self.push first_of_second
+end
+
+def merge(sorted_arr1, sorted_arr2)
+	output_length = sorted_arr1.length + sorted_arr2.length
+	counterA = 0
+	counterB = 0
+	output = []
+	output_length.times do
+		if sorted_arr1[counterA] && sorted_arr2[counterB]
+			if sorted_arr1[counterA] < sorted_arr2[counterB]
+				output << sorted_arr1[counterA]
+				counterA += 1
+			else
+				output << sorted_arr2[counterB]
+				counterB += 1
+			end
+		elsif sorted_arr1[counterA]
+			output << sorted_arr1[counterA]
+			counterA += 1
 		else
-			self.push first_of_second
-			self.push first_of_first
+			output << sorted_arr2[counterB]
+			counterB += 1
 		end
 	end
-
-	# def merge_terminal(arr)
-
+	output
 end
