@@ -6,7 +6,7 @@ class Array
 		length = self.length
 		return self if length < 2
 		first_half = self[0, length/2].merge_sort
-		second_half = self[(length/2)..length].merge_sort
+		second_half = self[(length/2)...length].merge_sort
 		merge first_half, second_half
 	end
 

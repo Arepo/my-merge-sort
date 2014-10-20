@@ -20,6 +20,10 @@ describe 'merge sort' do
 		expect(unsorted.merge_sort).to eq [1,2,3,4,5,6,7,8,9]
 	end
 
+	it 'returns [1,3,3] when called on [3,1,3]' do
+		expect([3,1,3].merge_sort).to eq [1,3,3]
+	end
+
 	describe 'merge' do
 
 		it 'given two single-element arrays returns a single array with the two elements sorted' do
