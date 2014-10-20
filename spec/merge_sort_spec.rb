@@ -26,7 +26,9 @@ describe 'merge sort' do
 			expect(merge([2], [1])).to eq [1, 2]
 		end
 
-
+		it 'given an empty array and a sorted array returns the sorted array unchanged' do
+			expect(merge([], [2, 4, 8])).to eq [2, 4, 8]
+		end
 
 	end
 
